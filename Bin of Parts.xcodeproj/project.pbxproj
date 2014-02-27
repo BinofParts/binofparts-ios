@@ -23,6 +23,7 @@
 		8B9808CC18B30FE0008AC816 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9808A818B30FDF008AC816 /* UIKit.framework */; };
 		8B9808D418B30FE0008AC816 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B9808D218B30FE0008AC816 /* InfoPlist.strings */; };
 		8B9808D618B30FE0008AC816 /* Bin_of_PartsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9808D518B30FE0008AC816 /* Bin_of_PartsTests.m */; };
+		8BDC844118BEE84F0049D916 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC844018BEE84F0049D916 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		8B9808D118B30FE0008AC816 /* Bin of PartsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bin of PartsTests-Info.plist"; sourceTree = "<group>"; };
 		8B9808D318B30FE0008AC816 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8B9808D518B30FE0008AC816 /* Bin_of_PartsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bin_of_PartsTests.m; sourceTree = "<group>"; };
+		8BDC843F18BEE84F0049D916 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8BDC844018BEE84F0049D916 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 			children = (
 				8B9808B318B30FE0008AC816 /* AppDelegate.h */,
 				8B9808B418B30FE0008AC816 /* AppDelegate.m */,
+				8BDC843F18BEE84F0049D916 /* LoginViewController.h */,
+				8BDC844018BEE84F0049D916 /* LoginViewController.m */,
 				8B9808B618B30FE0008AC816 /* Main_iPhone.storyboard */,
 				8B9808B918B30FE0008AC816 /* Main_iPad.storyboard */,
 				8B9808BC18B30FE0008AC816 /* FirstViewController.h */,
@@ -207,6 +212,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Bin of Parts, inc.";
 				TargetAttributes = {
+					8B9808A018B30FDF008AC816 = {
+						DevelopmentTeam = ERV9GQZ94Y;
+					};
 					8B9808C718B30FE0008AC816 = {
 						TestTargetID = 8B9808A018B30FDF008AC816;
 					};
@@ -262,6 +270,7 @@
 				8B9808B518B30FE0008AC816 /* AppDelegate.m in Sources */,
 				8B9808BE18B30FE0008AC816 /* FirstViewController.m in Sources */,
 				8B9808B118B30FE0008AC816 /* main.m in Sources */,
+				8BDC844118BEE84F0049D916 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bin of Parts/Bin of Parts-Prefix.pch";
 				INFOPLIST_FILE = "Bin of Parts/Bin of Parts-Info.plist";
@@ -409,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bin of Parts/Bin of Parts-Prefix.pch";
 				INFOPLIST_FILE = "Bin of Parts/Bin of Parts-Info.plist";
@@ -476,6 +487,7 @@
 				8B9808DB18B30FE0008AC816 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B9808DC18B30FE0008AC816 /* Build configuration list for PBXNativeTarget "Bin of PartsTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +496,7 @@
 				8B9808DE18B30FE0008AC816 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

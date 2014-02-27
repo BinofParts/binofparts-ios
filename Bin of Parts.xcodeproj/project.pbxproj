@@ -15,8 +15,6 @@
 		8B9808B518B30FE0008AC816 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9808B418B30FE0008AC816 /* AppDelegate.m */; };
 		8B9808B818B30FE0008AC816 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9808B618B30FE0008AC816 /* Main_iPhone.storyboard */; };
 		8B9808BB18B30FE0008AC816 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B9808B918B30FE0008AC816 /* Main_iPad.storyboard */; };
-		8B9808BE18B30FE0008AC816 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9808BD18B30FE0008AC816 /* FirstViewController.m */; };
-		8B9808C118B30FE0008AC816 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9808C018B30FE0008AC816 /* SecondViewController.m */; };
 		8B9808C318B30FE0008AC816 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B9808C218B30FE0008AC816 /* Images.xcassets */; };
 		8B9808CA18B30FE0008AC816 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9808C918B30FE0008AC816 /* XCTest.framework */; };
 		8B9808CB18B30FE0008AC816 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9808A418B30FDF008AC816 /* Foundation.framework */; };
@@ -24,6 +22,9 @@
 		8B9808D418B30FE0008AC816 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B9808D218B30FE0008AC816 /* InfoPlist.strings */; };
 		8B9808D618B30FE0008AC816 /* Bin_of_PartsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9808D518B30FE0008AC816 /* Bin_of_PartsTests.m */; };
 		8BDC844118BEE84F0049D916 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC844018BEE84F0049D916 /* LoginViewController.m */; };
+		8BDC844418BF1E630049D916 /* TeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC844318BF1E630049D916 /* TeamsTableViewController.m */; };
+		8BDC844718BF1E7B0049D916 /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC844618BF1E7B0049D916 /* EventsTableViewController.m */; };
+		8BDC844A18BF1F000049D916 /* KopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC844918BF1F000049D916 /* KopTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,10 +50,6 @@
 		8B9808B418B30FE0008AC816 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8B9808B718B30FE0008AC816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		8B9808BA18B30FE0008AC816 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		8B9808BC18B30FE0008AC816 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		8B9808BD18B30FE0008AC816 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		8B9808BF18B30FE0008AC816 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		8B9808C018B30FE0008AC816 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		8B9808C218B30FE0008AC816 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8B9808C818B30FE0008AC816 /* Bin of PartsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bin of PartsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9808C918B30FE0008AC816 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,6 +58,12 @@
 		8B9808D518B30FE0008AC816 /* Bin_of_PartsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bin_of_PartsTests.m; sourceTree = "<group>"; };
 		8BDC843F18BEE84F0049D916 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		8BDC844018BEE84F0049D916 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		8BDC844218BF1E630049D916 /* TeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamsTableViewController.h; sourceTree = "<group>"; };
+		8BDC844318BF1E630049D916 /* TeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamsTableViewController.m; sourceTree = "<group>"; };
+		8BDC844518BF1E7B0049D916 /* EventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableViewController.h; sourceTree = "<group>"; };
+		8BDC844618BF1E7B0049D916 /* EventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableViewController.m; sourceTree = "<group>"; };
+		8BDC844818BF1F000049D916 /* KopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KopTableViewController.h; sourceTree = "<group>"; };
+		8BDC844918BF1F000049D916 /* KopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KopTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,12 +127,14 @@
 				8B9808B418B30FE0008AC816 /* AppDelegate.m */,
 				8BDC843F18BEE84F0049D916 /* LoginViewController.h */,
 				8BDC844018BEE84F0049D916 /* LoginViewController.m */,
+				8BDC844218BF1E630049D916 /* TeamsTableViewController.h */,
+				8BDC844318BF1E630049D916 /* TeamsTableViewController.m */,
+				8BDC844518BF1E7B0049D916 /* EventsTableViewController.h */,
+				8BDC844618BF1E7B0049D916 /* EventsTableViewController.m */,
+				8BDC844818BF1F000049D916 /* KopTableViewController.h */,
+				8BDC844918BF1F000049D916 /* KopTableViewController.m */,
 				8B9808B618B30FE0008AC816 /* Main_iPhone.storyboard */,
 				8B9808B918B30FE0008AC816 /* Main_iPad.storyboard */,
-				8B9808BC18B30FE0008AC816 /* FirstViewController.h */,
-				8B9808BD18B30FE0008AC816 /* FirstViewController.m */,
-				8B9808BF18B30FE0008AC816 /* SecondViewController.h */,
-				8B9808C018B30FE0008AC816 /* SecondViewController.m */,
 				8B9808C218B30FE0008AC816 /* Images.xcassets */,
 				8B9808AB18B30FE0008AC816 /* Supporting Files */,
 			);
@@ -266,10 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B9808C118B30FE0008AC816 /* SecondViewController.m in Sources */,
 				8B9808B518B30FE0008AC816 /* AppDelegate.m in Sources */,
-				8B9808BE18B30FE0008AC816 /* FirstViewController.m in Sources */,
 				8B9808B118B30FE0008AC816 /* main.m in Sources */,
+				8BDC844418BF1E630049D916 /* TeamsTableViewController.m in Sources */,
+				8BDC844718BF1E7B0049D916 /* EventsTableViewController.m in Sources */,
+				8BDC844A18BF1F000049D916 /* KopTableViewController.m in Sources */,
 				8BDC844118BEE84F0049D916 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

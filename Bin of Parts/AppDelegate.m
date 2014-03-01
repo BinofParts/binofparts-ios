@@ -7,15 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "PDKeychainBindings.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.122 green:0.761 blue:0 alpha:1.0]];
+    [[UIApplication sharedApplication] delegate].window.tintColor = [UIColor colorWithRed:0.122 green:0.761 blue:0 alpha:1.0];
+    PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
+    NSString *email = [bindings objectForKey:@"email"];
+    NSString *token = [bindings objectForKey:@"token"];
+    NSLog(@"User Email: %@",email);
+    NSLog(@"User Token: %@",token);
+    if ([email length] != 0 || [token length] != 0) {
+        UIStoryboard *storyboard = self.window.rootViewController.storyboard;
+        UIViewController *rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoggedIn"];
+        self.window.rootViewController = rootViewController;
+    }
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

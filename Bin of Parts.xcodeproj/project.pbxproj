@@ -21,6 +21,12 @@
 		8B9808CC18B30FE0008AC816 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9808A818B30FDF008AC816 /* UIKit.framework */; };
 		8B9808D418B30FE0008AC816 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B9808D218B30FE0008AC816 /* InfoPlist.strings */; };
 		8B9808D618B30FE0008AC816 /* Bin_of_PartsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9808D518B30FE0008AC816 /* Bin_of_PartsTests.m */; };
+		8BB9660718C1943D0041AD18 /* TeamDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9660618C1943C0041AD18 /* TeamDetailViewController.m */; };
+		8BB9660A18C1D34E0041AD18 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB9660918C1D34D0041AD18 /* Security.framework */; };
+		8BB9661218C1DD080041AD18 /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9660F18C1DD080041AD18 /* PDKeychainBindings.m */; };
+		8BB9661318C1DD080041AD18 /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BB9661118C1DD080041AD18 /* PDKeychainBindingsController.m */; };
+		8BC37A5618C16EB9004D8B91 /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC37A5518C16EB9004D8B91 /* MeTableViewController.m */; };
+		8BC37A5918C1872F004D8B91 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC37A5818C1872F004D8B91 /* EventDetailViewController.m */; };
 		8BDC844118BEE84F0049D916 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC844018BEE84F0049D916 /* LoginViewController.m */; };
 		8BDC844418BF1E630049D916 /* TeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC844318BF1E630049D916 /* TeamsTableViewController.m */; };
 		8BDC844718BF1E7B0049D916 /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC844618BF1E7B0049D916 /* EventsTableViewController.m */; };
@@ -56,6 +62,21 @@
 		8B9808D118B30FE0008AC816 /* Bin of PartsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bin of PartsTests-Info.plist"; sourceTree = "<group>"; };
 		8B9808D318B30FE0008AC816 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8B9808D518B30FE0008AC816 /* Bin_of_PartsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bin_of_PartsTests.m; sourceTree = "<group>"; };
+		8BB9660518C1943C0041AD18 /* TeamDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamDetailViewController.h; sourceTree = "<group>"; };
+		8BB9660618C1943C0041AD18 /* TeamDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamDetailViewController.m; sourceTree = "<group>"; };
+		8BB9660818C1CF3C0041AD18 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		8BB9660918C1D34D0041AD18 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8BB9660E18C1DD080041AD18 /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
+		8BB9660F18C1DD080041AD18 /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
+		8BB9661018C1DD080041AD18 /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
+		8BB9661118C1DD080041AD18 /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
+		8BB9661418C1F5950041AD18 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8BB9661618C1F5A00041AD18 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8BB9661818C1F5A90041AD18 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8BC37A5418C16EB9004D8B91 /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeTableViewController.h; path = private/MeTableViewController.h; sourceTree = "<group>"; };
+		8BC37A5518C16EB9004D8B91 /* MeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeTableViewController.m; path = private/MeTableViewController.m; sourceTree = "<group>"; };
+		8BC37A5718C1872F004D8B91 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
+		8BC37A5818C1872F004D8B91 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
 		8BDC843F18BEE84F0049D916 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		8BDC844018BEE84F0049D916 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8BDC844218BF1E630049D916 /* TeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamsTableViewController.h; sourceTree = "<group>"; };
@@ -71,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB9660A18C1D34E0041AD18 /* Security.framework in Frameworks */,
 				8B9808A718B30FDF008AC816 /* CoreGraphics.framework in Frameworks */,
 				8B9808A918B30FDF008AC816 /* UIKit.framework in Frameworks */,
 				8B9808A518B30FDF008AC816 /* Foundation.framework in Frameworks */,
@@ -112,6 +134,10 @@
 		8B9808A318B30FDF008AC816 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BB9661818C1F5A90041AD18 /* MobileCoreServices.framework */,
+				8BB9661618C1F5A00041AD18 /* SystemConfiguration.framework */,
+				8BB9661418C1F5950041AD18 /* CFNetwork.framework */,
+				8BB9660918C1D34D0041AD18 /* Security.framework */,
 				8B9808A418B30FDF008AC816 /* Foundation.framework */,
 				8B9808A618B30FDF008AC816 /* CoreGraphics.framework */,
 				8B9808A818B30FDF008AC816 /* UIKit.framework */,
@@ -123,14 +149,24 @@
 		8B9808AA18B30FE0008AC816 /* Bin of Parts */ = {
 			isa = PBXGroup;
 			children = (
+				8BB9660E18C1DD080041AD18 /* PDKeychainBindings.h */,
+				8BB9660F18C1DD080041AD18 /* PDKeychainBindings.m */,
+				8BB9661018C1DD080041AD18 /* PDKeychainBindingsController.h */,
+				8BB9661118C1DD080041AD18 /* PDKeychainBindingsController.m */,
+				8BB9660818C1CF3C0041AD18 /* constants.h */,
+				8BC37A4818C07504004D8B91 /* Private */,
 				8B9808B318B30FE0008AC816 /* AppDelegate.h */,
 				8B9808B418B30FE0008AC816 /* AppDelegate.m */,
 				8BDC843F18BEE84F0049D916 /* LoginViewController.h */,
 				8BDC844018BEE84F0049D916 /* LoginViewController.m */,
 				8BDC844218BF1E630049D916 /* TeamsTableViewController.h */,
 				8BDC844318BF1E630049D916 /* TeamsTableViewController.m */,
+				8BB9660518C1943C0041AD18 /* TeamDetailViewController.h */,
+				8BB9660618C1943C0041AD18 /* TeamDetailViewController.m */,
 				8BDC844518BF1E7B0049D916 /* EventsTableViewController.h */,
 				8BDC844618BF1E7B0049D916 /* EventsTableViewController.m */,
+				8BC37A5718C1872F004D8B91 /* EventDetailViewController.h */,
+				8BC37A5818C1872F004D8B91 /* EventDetailViewController.m */,
 				8BDC844818BF1F000049D916 /* KopTableViewController.h */,
 				8BDC844918BF1F000049D916 /* KopTableViewController.m */,
 				8B9808B618B30FE0008AC816 /* Main_iPhone.storyboard */,
@@ -168,6 +204,15 @@
 				8B9808D218B30FE0008AC816 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8BC37A4818C07504004D8B91 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				8BC37A5418C16EB9004D8B91 /* MeTableViewController.h */,
+				8BC37A5518C16EB9004D8B91 /* MeTableViewController.m */,
+			);
+			name = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,10 +317,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B9808B518B30FE0008AC816 /* AppDelegate.m in Sources */,
+				8BB9660718C1943D0041AD18 /* TeamDetailViewController.m in Sources */,
 				8B9808B118B30FE0008AC816 /* main.m in Sources */,
+				8BB9661218C1DD080041AD18 /* PDKeychainBindings.m in Sources */,
+				8BC37A5918C1872F004D8B91 /* EventDetailViewController.m in Sources */,
+				8BB9661318C1DD080041AD18 /* PDKeychainBindingsController.m in Sources */,
 				8BDC844418BF1E630049D916 /* TeamsTableViewController.m in Sources */,
 				8BDC844718BF1E7B0049D916 /* EventsTableViewController.m in Sources */,
 				8BDC844A18BF1F000049D916 /* KopTableViewController.m in Sources */,
+				8BC37A5618C16EB9004D8B91 /* MeTableViewController.m in Sources */,
 				8BDC844118BEE84F0049D916 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

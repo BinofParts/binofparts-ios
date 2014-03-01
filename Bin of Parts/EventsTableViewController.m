@@ -7,6 +7,8 @@
 //
 
 #import "EventsTableViewController.h"
+#import "EventDetailViewController.h"
+#import "constants.h"
 
 @interface EventsTableViewController ()
 
@@ -26,12 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSString *urlString = [NSString stringWithFormat:@"%@events", kBaseURL];
+    NSURL *teamURL = [NSURL URLWithString:urlString];
+    NSError *error = nil;
+    NSData *jsonData = [NSData dataWithContentsOfURL:teamURL options:0 error:&error];
+    NSError *error2 = nil;
+    self.events = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error2];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,28 +46,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.events count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    NSDictionary *tempDictionary= [self.events objectAtIndex:indexPath.row];
+    NSDictionary *dict = [tempDictionary objectForKey:@"name"];
+    NSString *name = [NSString stringWithFormat:@"%@", dict];
+    
+    cell.textLabel.text =  name;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -105,15 +107,20 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"eventSelected"])
+    {
+        EventDetailViewController *detailViewController =
+        [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSDictionary *tempDictionary= [self.events objectAtIndex:myIndexPath.row];
+        
+        detailViewController.title = [NSString stringWithFormat:@"%@", [tempDictionary objectForKey:@"key"]];
+        detailViewController.navigationItem.prompt = [NSString stringWithFormat:@"%@", [tempDictionary objectForKey:@"name"]];
+    }
 }
-*/
 
 @end

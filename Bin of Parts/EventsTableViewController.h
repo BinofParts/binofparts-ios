@@ -10,4 +10,6 @@
 
 @interface EventsTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *events;
+
 @end

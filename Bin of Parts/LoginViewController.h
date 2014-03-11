@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 - (IBAction)loginClicked:(id)sender;
 - (IBAction)backgroundClicked:(id)sender;
-- (IBAction)cancelClicked:(id)sender;
+//- (IBAction)cancelClicked:(id)sender;
 
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0966AF18CEA17100692A10 /* RequestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0966AE18CEA17100692A10 /* RequestsTableViewController.m */; };
+		8B0966B218CEA19400692A10 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0966B118CEA19400692A10 /* MainViewController.m */; };
 		8B9808A518B30FDF008AC816 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9808A418B30FDF008AC816 /* Foundation.framework */; };
 		8B9808A718B30FDF008AC816 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9808A618B30FDF008AC816 /* CoreGraphics.framework */; };
 		8B9808A918B30FDF008AC816 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9808A818B30FDF008AC816 /* UIKit.framework */; };
@@ -44,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B0966AD18CEA17100692A10 /* RequestsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestsTableViewController.h; path = iPad/RequestsTableViewController.h; sourceTree = "<group>"; };
+		8B0966AE18CEA17100692A10 /* RequestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestsTableViewController.m; path = iPad/RequestsTableViewController.m; sourceTree = "<group>"; };
+		8B0966B018CEA19400692A10 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = iPad/MainViewController.h; sourceTree = "<group>"; };
+		8B0966B118CEA19400692A10 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = iPad/MainViewController.m; sourceTree = "<group>"; };
 		8B9808A118B30FDF008AC816 /* Bin of Parts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bin of Parts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9808A418B30FDF008AC816 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8B9808A618B30FDF008AC816 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +118,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0966AC18CEA10900692A10 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				8B0966AD18CEA17100692A10 /* RequestsTableViewController.h */,
+				8B0966AE18CEA17100692A10 /* RequestsTableViewController.m */,
+				8B0966B018CEA19400692A10 /* MainViewController.h */,
+				8B0966B118CEA19400692A10 /* MainViewController.m */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		8B98089818B30FDF008AC816 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +186,7 @@
 				8BC37A5818C1872F004D8B91 /* EventDetailViewController.m */,
 				8BDC844818BF1F000049D916 /* KopTableViewController.h */,
 				8BDC844918BF1F000049D916 /* KopTableViewController.m */,
+				8B0966AC18CEA10900692A10 /* iPad */,
 				8B9808B618B30FE0008AC816 /* Main_iPhone.storyboard */,
 				8B9808B918B30FE0008AC816 /* Main_iPad.storyboard */,
 				8B9808C218B30FE0008AC816 /* Images.xcassets */,
@@ -319,6 +337,8 @@
 				8B9808B518B30FE0008AC816 /* AppDelegate.m in Sources */,
 				8BB9660718C1943D0041AD18 /* TeamDetailViewController.m in Sources */,
 				8B9808B118B30FE0008AC816 /* main.m in Sources */,
+				8B0966AF18CEA17100692A10 /* RequestsTableViewController.m in Sources */,
+				8B0966B218CEA19400692A10 /* MainViewController.m in Sources */,
 				8BB9661218C1DD080041AD18 /* PDKeychainBindings.m in Sources */,
 				8BC37A5918C1872F004D8B91 /* EventDetailViewController.m in Sources */,
 				8BB9661318C1DD080041AD18 /* PDKeychainBindingsController.m in Sources */,

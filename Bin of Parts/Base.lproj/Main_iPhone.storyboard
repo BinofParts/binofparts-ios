@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5051" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5051" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qcO-jR-1BE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -25,7 +25,7 @@
             <objects>
                 <tableViewController id="naQ-kC-xqk" customClass="KopTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hu8-ZF-dkJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -45,11 +45,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Kit of Parts" id="ata-BS-JFm"/>
                     <navigationItem key="navigationItem" title="Kit of Parts" id="gmS-CJ-E1g">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="ies-EK-MKe">
-                            <connections>
-                                <segue destination="qcO-jR-1BE" kind="modal" id="guv-8q-hu5"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="ies-EK-MKe"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -79,7 +75,7 @@
             <objects>
                 <tableViewController id="yTY-mz-3wp" customClass="EventsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y3B-Ca-6kK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -102,11 +98,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Events" id="YUV-pQ-TvH"/>
                     <navigationItem key="navigationItem" title="Events" id="p6y-Ek-4Ii">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="Kxr-Z1-ldK">
-                            <connections>
-                                <segue destination="qcO-jR-1BE" kind="modal" id="b4j-4F-bBG"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="Kxr-Z1-ldK"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -124,16 +116,12 @@
                         <viewControllerLayoutGuide type="bottom" id="X1P-aW-wby"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Os-XX-aKi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Event Key" prompt="Event Name" id="udu-Ff-H5K">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="wS2-8W-YnD">
-                            <connections>
-                                <segue destination="qcO-jR-1BE" kind="modal" id="QtQ-DX-lhc"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="wS2-8W-YnD"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EJ-5h-MaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,7 +133,7 @@
             <objects>
                 <tableViewController title="Teams" id="q7y-Sg-cl8" customClass="TeamsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VdH-Xe-QcH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -184,11 +172,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Teams" id="SYd-Rt-A6g"/>
                     <navigationItem key="navigationItem" title="Teams" id="GDP-1l-yta">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="QGx-yd-TA6">
-                            <connections>
-                                <segue destination="qcO-jR-1BE" kind="modal" id="9Lf-Iz-SHW"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="QGx-yd-TA6"/>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -207,16 +191,12 @@
                         <viewControllerLayoutGuide type="bottom" id="IfG-n0-Rdp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U9n-lv-awN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Team Number" id="hgb-Me-SZV">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="ORU-Lc-Lts">
-                            <connections>
-                                <segue destination="qcO-jR-1BE" kind="modal" id="lV1-tT-rpn"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="ORU-Lc-Lts"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dD9-uP-YUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -264,7 +244,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gbt-hp-VHx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="c2R-Lf-6l3" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="34" translatesAutoresizingMaskIntoConstraints="NO" id="3Xy-Zf-7Hd">
@@ -350,7 +330,7 @@
             <objects>
                 <tableViewController id="qjo-X2-wiz" customClass="MeTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2sx-ZC-Zss">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -372,12 +352,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="gFk-Z5-OBS">
                             <connections>
                                 <action selector="logoutButton:" destination="qjo-X2-wiz" id="Ax6-dI-wg1"/>
+                                <segue destination="qcO-jR-1BE" kind="modal" identifier="logout" animates="NO" id="aNo-fl-y77"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="8YX-ce-x5E" kind="modal" identifier="logout" animates="NO" id="iU0-Tp-ief"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ooh-ff-87P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -420,7 +398,7 @@
             <objects>
                 <tableViewController id="qJs-de-JCR" customClass="KopTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pCK-ei-M5z">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -468,7 +446,7 @@
             <objects>
                 <tableViewController id="6x7-S3-JOU" customClass="EventsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qgU-Gn-YtR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -508,7 +486,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Aaa-6g-Sd3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5vn-7Y-2BG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -523,7 +501,7 @@
             <objects>
                 <tableViewController title="Teams" id="wTH-KB-60F" customClass="TeamsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ubf-fh-2Er">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -580,7 +558,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bAp-YQ-l4P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lJg-Hz-89d">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -638,10 +616,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="lV1-tT-rpn"/>
         <segue reference="Wgh-iB-p4O"/>
         <segue reference="h4L-za-6b2"/>
     </inferredMetricsTieBreakers>

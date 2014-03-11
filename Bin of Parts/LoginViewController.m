@@ -126,8 +126,8 @@
     [_passwordField resignFirstResponder];
 }
 
-- (IBAction)cancelClicked:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+//- (IBAction)cancelClicked:(id)sender {
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 
 @end

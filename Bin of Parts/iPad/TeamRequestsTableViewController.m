@@ -1,40 +1,37 @@
 //
-//  RequestsTableViewController.m
+//  TeamRequestsTableViewController.m
 //  Bin of Parts
 //
-//  Created by Developer on 3/10/14.
+//  Created by Developer on 3/11/14.
 //  Copyright (c) 2014 Bin of Parts, inc. All rights reserved.
 //
 
-#import "RequestsTableViewController.h"
+#import "TeamRequestsTableViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "AcceptRequestViewController.h"
+#import "RemoveFromInventoryPartViewController.h"
 #import "PDKeychainBindings.h"
 #import "constants.h"
 
-@interface RequestsTableViewController ()
+@interface TeamRequestsTableViewController ()
 
 @end
 
-@implementation RequestsTableViewController
+@implementation TeamRequestsTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        
+        // Custom initialization
     }
     return self;
 }
-
-- (void) sendRequest:(NSTimer *) timer
-{
-    NSLog(@"Request Called.");
+- (void) sendRequest:(NSTimer *) timer{
     PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
     NSString *email = [bindings objectForKey:@"email"];
     NSString *token = [bindings objectForKey:@"token"];
     
-    NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/requests?user_email=%@&user_token=%@", kBaseURL, email,token];
+    NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/inventories?user_email=%@&user_token=%@", kBaseURL, email,token];
     
     NSURL *teamURL = [NSURL URLWithString:urlString];
     
@@ -45,58 +42,7 @@
         NSData *jsonData = [NSData dataWithContentsOfURL:teamURL options:0 error:&error];
         if (jsonData == nil) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self alertStatus:@"Sorry No Requests." :@""];
-            });
-        }
-        else{
-            
-            
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSError *error2 = nil;
-                int beforeCount =  [self.requests count];
-                self.requests = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error2];
-                NSLog(@"%@",error2);
-                //NSLog(@"%@",temp);
-                
-                if (self.requests.count - beforeCount != 0){
-                    [self.tableView beginUpdates];
-                    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                    [self.tableView endUpdates];
-                }
-                     [self.tableView reloadData];
-                
-                //[self.requests arrayByAddingObjectsFromArray:temp];
-                
-                
-            });
-        }
-        
-    });
-}
-
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
-    NSString *email = [bindings objectForKey:@"email"];
-    NSString *token = [bindings objectForKey:@"token"];
-
-    NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/requests?user_email=%@&user_token=%@", kBaseURL, email,token];
-    
-    NSURL *teamURL = [NSURL URLWithString:urlString];
-    
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSError *error = nil;
-        NSData *jsonData = [NSData dataWithContentsOfURL:teamURL options:0 error:&error];
-        if (jsonData == nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self alertStatus:@"Sorry No Requests." :@""];
+                //[self alertStatus:@"Sorry No Requests." :@""];
             });
         }
         else{
@@ -113,18 +59,50 @@
         }
         
     });
+}
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
+    NSString *email = [bindings objectForKey:@"email"];
+    NSString *token = [bindings objectForKey:@"token"];
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/inventories?user_email=%@&user_token=%@", kBaseURL, email,token];
+    
+    NSURL *teamURL = [NSURL URLWithString:urlString];
     
     
-    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSError *error = nil;
+        NSData *jsonData = [NSData dataWithContentsOfURL:teamURL options:0 error:&error];
+        if (jsonData == nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self alertStatus:@"Sorry Nothing in inventory." :@""];
+            });
+        }
+        else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSError *error2 = nil;
+                self.requests = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error2];
+                NSLog(@"%@",error2);
+                NSLog(@"%@",self.requests);
+                
+                //[self.requests arrayByAddingObjectsFromArray:temp];
+                
+                [self.tableView reloadData];
+                self.timer = [NSTimer scheduledTimerWithTimeInterval:8.0 target:self selector:@selector(sendRequest:) userInfo:nil repeats:YES];
+            });
+        }
+        
+    });
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
     [self.timer invalidate];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(sendRequest:) userInfo:nil repeats:YES];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -146,7 +124,6 @@
     return self.requests.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
@@ -156,14 +133,6 @@
     NSString *qty = [tempDictionary objectForKey:@"qty"];
     NSNumber *accepted = [tempDictionary objectForKey:@"accepted"];
     NSString *accepted_by = [tempDictionary objectForKey:@"accepted_by"];
-    
-    NSString *created_at = [tempDictionary objectForKey:@"created_at"];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
-    NSDate *created_date = [dateFormatter dateFromString:created_at];
-    
-    dateFormatter.dateFormat=@"hh:mm a EEEE, MMMM dd, yyyy";
-    NSString * dateString = [dateFormatter stringFromDate:created_date];
     
     if ([accepted boolValue] == YES) {
         UILabel *acceptedteamlbl = (UILabel *)[cell viewWithTag:204];
@@ -190,12 +159,11 @@
 //    NSData *data = [NSData dataWithContentsOfURL:url];
 //    requestImageView.image = [UIImage imageWithData:data];
     
-     UIImageView *requestImageView = (UIImageView *)[cell viewWithTag:203];
-    [requestImageView setImageWithURL:[NSURL URLWithString:pictureURL]
-                   placeholderImage:[UIImage imageNamed:@"second"]];
+    UIImageView *requestImageView = (UIImageView *)[cell viewWithTag:203];
     
-    UILabel *datelbl = (UILabel *)[cell viewWithTag:212];
-    [datelbl setText:[NSString stringWithFormat:@"%@", dateString]];
+    [requestImageView setImageWithURL:[NSURL URLWithString:pictureURL]
+                     placeholderImage:[UIImage imageNamed:@"second"]];
+    
     UILabel *qtylbl = (UILabel *)[cell viewWithTag:206];
     [qtylbl setText:[NSString stringWithFormat:@"Quantity %@", qty]];
     UILabel *teamlbl = (UILabel *)[cell viewWithTag:200];
@@ -203,14 +171,10 @@
     UILabel *lblName = (UILabel *)[cell viewWithTag:201];
     [lblName setText:[NSString stringWithFormat:@"%@", name]];
     UILabel *lblDesc = (UILabel *)[cell viewWithTag:202];
-    lblDesc.lineBreakMode = NSLineBreakByWordWrapping;
-    lblDesc.numberOfLines = 2;
     [lblDesc setText:[NSString stringWithFormat:@"%@", description]];
     
     return cell;
 }
-
-
 
 - (void) alertStatus:(NSString *)msg :(NSString *)title
 {
@@ -223,27 +187,48 @@
     [alertView show];
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
+        NSString *email = [bindings objectForKey:@"email"];
+        NSString *token = [bindings objectForKey:@"token"];
+        
+        NSDictionary *tempDictionary= [self.requests objectAtIndex:indexPath.row];
+        NSNumber *inventory_id = [tempDictionary objectForKey:@"id"];
+        NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/inventories/%@?user_email=%@&user_token=%@&event_id=17", kBaseURL, inventory_id, email, token];
+        
+        NSURL *url=[NSURL URLWithString:urlString];
+        
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:url];
+        [request setHTTPMethod:@"DELETE"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        
+        //[NSURLRequest setAllowsAnyHTTPSCertificate:YES forHost:[url host]];
+        
+        NSError *error = [[NSError alloc] init];
+        NSHTTPURLResponse *response = nil;
+        NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        
+        NSLog(@"Response code: %d", [response statusCode]);
+        
+        [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(sendRequest:) userInfo:nil repeats:NO];
+    }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -262,9 +247,9 @@
 */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"acceptRequest"]) {
+    if ([segue.identifier isEqualToString:@"RemoveFromInventory"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        AcceptRequestViewController *destViewController = segue.destinationViewController;
+        RemoveFromInventoryPartViewController *destViewController = segue.destinationViewController;
         destViewController.partitem = [self.requests objectAtIndex:indexPath.row];
         [self.timer invalidate];
     }

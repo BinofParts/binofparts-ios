@@ -98,7 +98,7 @@
                 {
                     NSLog(@"Login SUCCESS");
                     PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
-                    [bindings setObject:[jsonData objectForKey:@"token"] forKey:@"token"];
+                    [bindings setObject:token forKey:@"token"];
                     [bindings setObject:[NSString stringWithFormat:@"%@",[_emailField text]] forKey:@"email"];
                     [self performSegueWithIdentifier:@"LoggedIn" sender:self];
                 } else {

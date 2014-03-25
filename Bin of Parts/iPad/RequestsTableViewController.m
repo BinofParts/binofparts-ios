@@ -27,7 +27,15 @@
     return self;
 }
 
-- (void) sendRequest:(NSTimer *) timer
+- (void)stopRefresh
+
+{
+    
+    [self.refreshControl endRefreshing];
+    
+}
+
+- (void) sendRequest
 {
     NSLog(@"Request Called.");
     PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
@@ -64,7 +72,9 @@
                     [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
                     [self.tableView endUpdates];
                 }
-                     [self.tableView reloadData];
+                
+                [self.tableView reloadData];
+                [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:1.0];
                 
                 //[self.requests arrayByAddingObjectsFromArray:temp];
                 
@@ -114,17 +124,35 @@
         
     });
     
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    
+    
+    
+    [refresh addTarget:self action:@selector(sendRequest)
+     
+      forControlEvents:UIControlEventValueChanged];
+    
+    
+    
+    self.refreshControl = refresh;
+    
+    
+    
+    //[self sendRequest];
+    
     
     
 }
 
-- (void)viewDidDisappear:(BOOL)animated{
-    [self.timer invalidate];
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(sendRequest:) userInfo:nil repeats:YES];
-}
+//- (void)viewDidDisappear:(BOOL)animated{
+//    [self.timer invalidate];
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated{
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(sendRequest:) userInfo:nil repeats:YES];
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -266,7 +294,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         AcceptRequestViewController *destViewController = segue.destinationViewController;
         destViewController.partitem = [self.requests objectAtIndex:indexPath.row];
-        [self.timer invalidate];
+        //[self.timer invalidate];
     }
 }
 

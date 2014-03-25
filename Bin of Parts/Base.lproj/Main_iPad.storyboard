@@ -360,7 +360,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 2linehhfhfhfhfhfhfhfhfhfhhfhdkjalkdsjfklajdslkfjlkasjdfkljsdklfjklasjdfkljasdlfj dlkfjdlkjfa" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="668" translatesAutoresizingMaskIntoConstraints="NO" id="R4X-Je-cNS">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="668" translatesAutoresizingMaskIntoConstraints="NO" id="R4X-Je-cNS">
                                             <rect key="frame" x="103" y="31" width="668" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1020,7 +1020,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description jdkajfkljsdldfjl;asjfl;asjdflk;jsdlkfjlsakjf;lkasjdfjas;lfj;ajdf;ajl;kdjf;lkajsk;dlfjklasjdfklj" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="665" translatesAutoresizingMaskIntoConstraints="NO" id="83m-Td-f7X">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="665" translatesAutoresizingMaskIntoConstraints="NO" id="83m-Td-f7X">
                                             <rect key="frame" x="129" y="39" width="665" height="44"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
@@ -1042,7 +1042,6 @@
                                         <constraint firstAttribute="bottom" secondItem="83m-Td-f7X" secondAttribute="bottom" constant="16" id="73G-eF-igd"/>
                                         <constraint firstAttribute="trailing" secondItem="AxX-Th-wWZ" secondAttribute="trailing" constant="20" id="7qo-Kl-RPt"/>
                                         <constraint firstItem="83m-Td-f7X" firstAttribute="top" secondItem="PBC-K1-SGe" secondAttribute="bottom" constant="4" id="Jup-Kj-Vve"/>
-                                        <constraint firstAttribute="trailing" secondItem="83m-Td-f7X" secondAttribute="trailing" constant="230" id="OTe-NT-OIb"/>
                                         <constraint firstAttribute="centerY" secondItem="aik-zb-Sqm" secondAttribute="centerY" id="QHd-Oo-Lde"/>
                                         <constraint firstItem="aik-zb-Sqm" firstAttribute="leading" secondItem="NMB-y6-eNI" secondAttribute="leading" constant="20" id="fCb-Au-AQr"/>
                                         <constraint firstAttribute="bottom" secondItem="AxX-Th-wWZ" secondAttribute="bottom" constant="39" id="hrI-pv-sl1"/>

@@ -26,7 +26,14 @@
     }
     return self;
 }
-- (void) sendRequest:(NSTimer *) timer{
+- (void)stopRefresh
+
+{
+    
+    [self.refreshControl endRefreshing];
+    
+}
+- (void) sendRequest{
     PDKeychainBindings *bindings = [PDKeychainBindings sharedKeychainBindings];
     NSString *email = [bindings objectForKey:@"email"];
     NSString *token = [bindings objectForKey:@"token"];
@@ -55,6 +62,7 @@
                 //[self.requests arrayByAddingObjectsFromArray:temp];
                 
                 [self.tableView reloadData];
+                [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:1.0];
             });
         }
         
@@ -91,24 +99,37 @@
                 //[self.requests arrayByAddingObjectsFromArray:temp];
                 
                 [self.tableView reloadData];
-                self.timer = [NSTimer scheduledTimerWithTimeInterval:8.0 target:self selector:@selector(sendRequest:) userInfo:nil repeats:YES];
             });
         }
         
     });
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    
+    
+    
+    [refresh addTarget:self action:@selector(sendRequest)
+     
+      forControlEvents:UIControlEventValueChanged];
+    
+    
+    
+    self.refreshControl = refresh;
 
 }
 
-- (void)viewDidDisappear:(BOOL)animated{
-    [self.timer invalidate];
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+//- (void)viewDidDisappear:(BOOL)animated{
+//    [self.timer invalidate];
+//}
+//
+//
+//- (void)didReceiveMemoryWarning
+//{
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//}
 
 #pragma mark - Table view data source
 
@@ -225,7 +246,7 @@
         
         NSLog(@"Response code: %d", [response statusCode]);
         
-        [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(sendRequest:) userInfo:nil repeats:NO];
+        
     }
 }
 
@@ -251,7 +272,7 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         RemoveFromInventoryPartViewController *destViewController = segue.destinationViewController;
         destViewController.partitem = [self.requests objectAtIndex:indexPath.row];
-        [self.timer invalidate];
+        //[self.timer invalidate];
     }
 }
 

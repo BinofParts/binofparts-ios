@@ -12,6 +12,5 @@
 
 
 @property (nonatomic, strong) NSMutableArray *requests;
-@property (nonatomic, strong) NSTimer *timer;
 
 @end

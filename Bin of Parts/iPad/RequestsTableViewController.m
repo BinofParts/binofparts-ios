@@ -74,7 +74,7 @@
                 }
                 
                 [self.tableView reloadData];
-                [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:1.0];
+                [self performSelector:@selector(stopRefresh) withObject:nil];
                 
                 //[self.requests arrayByAddingObjectsFromArray:temp];
                 

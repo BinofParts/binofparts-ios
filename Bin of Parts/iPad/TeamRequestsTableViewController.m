@@ -62,7 +62,7 @@
                 //[self.requests arrayByAddingObjectsFromArray:temp];
                 
                 [self.tableView reloadData];
-                [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:1.0];
+                [self performSelector:@selector(stopRefresh) withObject:nil];
             });
         }
         

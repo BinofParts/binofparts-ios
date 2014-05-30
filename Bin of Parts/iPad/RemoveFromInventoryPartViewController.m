@@ -144,6 +144,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)backgroundClicked:(id)sender {
+    [self.view endEditing:YES];
+}
+
 /*
 #pragma mark - Navigation
 

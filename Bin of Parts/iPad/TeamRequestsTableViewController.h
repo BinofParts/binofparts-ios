@@ -11,6 +11,7 @@
 @interface TeamRequestsTableViewController : UITableViewController
 
 
-@property (nonatomic, strong) NSMutableArray *requests;
+@property (nonatomic, strong) NSArray *requests;
+@property (nonatomic, strong) NSArray *searchResults;
 
 @end

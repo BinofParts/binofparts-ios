@@ -117,13 +117,18 @@
     
     
     self.refreshControl = refresh;
+    
+    self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
 
 }
 
 //- (void)viewDidDisappear:(BOOL)animated{
 //    [self.timer invalidate];
 //}
-//
+- (void)viewDidAppear:(BOOL)animated{
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(sendRequest:) userInfo:nil repeats:YES];
+    [self sendRequest];
+}
 //
 //- (void)didReceiveMemoryWarning
 //{
@@ -141,15 +146,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return self.requests.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [_searchResults count];
+        
+    } else {
+        return [_requests count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    NSDictionary *tempDictionary= [self.requests objectAtIndex:indexPath.row];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = (UITableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    NSDictionary *tempDictionary = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        tempDictionary= [_searchResults objectAtIndex:indexPath.row];
+    } else {
+        tempDictionary= [_requests objectAtIndex:indexPath.row];
+    }
+    
     NSString *team = [tempDictionary objectForKey:@"team_id"];
     NSString *qty = [tempDictionary objectForKey:@"qty"];
     NSNumber *accepted = [tempDictionary objectForKey:@"accepted"];
@@ -186,7 +208,7 @@
                      placeholderImage:[UIImage imageNamed:@"second"]];
     
     UILabel *qtylbl = (UILabel *)[cell viewWithTag:206];
-    [qtylbl setText:[NSString stringWithFormat:@"Quantity %@", qty]];
+    [qtylbl setText:[NSString stringWithFormat:@"%@", qty]];
     UILabel *teamlbl = (UILabel *)[cell viewWithTag:200];
     [teamlbl setText:[NSString stringWithFormat:@"Team %@", team]];
     UILabel *lblName = (UILabel *)[cell viewWithTag:201];
@@ -195,6 +217,29 @@
     [lblDesc setText:[NSString stringWithFormat:@"%@", description]];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
+}
+
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"part.name contains[c] %@", searchText];
+    _searchResults = [_requests filteredArrayUsingPredicate:resultPredicate];
+    
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 
 - (void) alertStatus:(NSString *)msg :(NSString *)title
@@ -245,6 +290,10 @@
         NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         
         NSLog(@"Response code: %d", [response statusCode]);
+        
+        if ([response statusCode] == 200) {
+            [self sendRequest];
+        }
         
         
     }

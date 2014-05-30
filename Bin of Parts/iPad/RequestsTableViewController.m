@@ -62,17 +62,9 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSError *error2 = nil;
-                int beforeCount =  [self.requests count];
                 self.requests = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error2];
                 NSLog(@"%@",error2);
                 //NSLog(@"%@",temp);
-                
-                if (self.requests.count - beforeCount != 0){
-                    [self.tableView beginUpdates];
-                    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-                    [self.tableView endUpdates];
-                }
-                
                 [self.tableView reloadData];
                 [self performSelector:@selector(stopRefresh) withObject:nil];
                 
@@ -150,9 +142,10 @@
 //    [self.timer invalidate];
 //}
 //
-//- (void)viewDidAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated{
 //    self.timer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(sendRequest:) userInfo:nil repeats:YES];
-//}
+    [self sendRequest];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -187,7 +180,7 @@
     
     NSString *created_at = [tempDictionary objectForKey:@"created_at"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"];
     NSDate *created_date = [dateFormatter dateFromString:created_at];
     
     dateFormatter.dateFormat=@"hh:mm a EEEE, MMMM dd, yyyy";

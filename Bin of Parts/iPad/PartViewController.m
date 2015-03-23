@@ -84,9 +84,9 @@
         NSString *token = [bindings objectForKey:@"token"];
         NSNumber *part = [_partitem objectForKey:@"id"];
         
-        NSString *post =[[NSString alloc] initWithFormat:@"team_id=%@&part_id=%@&qty=%@&event_id=17", team, part, qty];
+        NSString *post =[[NSString alloc] initWithFormat:@"team_id=%@&part_id=%@&qty=%@&event_id=24", team, part, qty];
         
-        NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/requests?user_email=%@&user_token=%@", kBaseURL, email, token];
+        NSString *urlString = [NSString stringWithFormat:@"%@events/2015flor/requests?user_email=%@&user_token=%@", kBaseURL, email, token];
         NSLog(@"PostData: %@",post);
             
         NSURL *url=[NSURL URLWithString:urlString];

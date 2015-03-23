@@ -102,7 +102,7 @@
         
         
         
-        NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/inventories/new?user_email=%@&user_token=%@&team_id=%@&part_id=%@&qty=%@&event_id=17&inventory_id=%@", kBaseURL, email, token, team, part_id, qty, inventory_id];
+        NSString *urlString = [NSString stringWithFormat:@"%@events/2015flor/inventories/new?user_email=%@&user_token=%@&team_id=%@&part_id=%@&qty=%@&event_id=17&inventory_id=%@", kBaseURL, email, token, team, part_id, qty, inventory_id];
         
         NSURL *url=[NSURL URLWithString:urlString];
         

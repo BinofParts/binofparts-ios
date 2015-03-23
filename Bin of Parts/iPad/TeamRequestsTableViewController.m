@@ -7,7 +7,7 @@
 //
 
 #import "TeamRequestsTableViewController.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "RemoveFromInventoryPartViewController.h"
 #import "PDKeychainBindings.h"
 #import "constants.h"
@@ -38,7 +38,7 @@
     NSString *email = [bindings objectForKey:@"email"];
     NSString *token = [bindings objectForKey:@"token"];
     
-    NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/inventories?user_email=%@&user_token=%@", kBaseURL, email,token];
+    NSString *urlString = [NSString stringWithFormat:@"%@events/2015flor/inventories?user_email=%@&user_token=%@", kBaseURL, email,token];
     
     NSURL *teamURL = [NSURL URLWithString:urlString];
     
@@ -197,6 +197,8 @@
     
     NSString *pictureURL = [NSString stringWithFormat:@"%@assets/kop%@/%@",kNoAPIURL, year, picture];
     
+//    NSLog(pictureURL);
+    
 //    UIImageView *requestImageView = (UIImageView *)[cell viewWithTag:203];
 //    NSURL *url = [NSURL URLWithString:pictureURL];
 //    NSData *data = [NSData dataWithContentsOfURL:url];
@@ -204,8 +206,12 @@
     
     UIImageView *requestImageView = (UIImageView *)[cell viewWithTag:203];
     
-    [requestImageView setImageWithURL:[NSURL URLWithString:pictureURL]
-                     placeholderImage:[UIImage imageNamed:@"second"]];
+    [requestImageView setImageWithURL:[NSURL URLWithString:pictureURL]];
+    
+//    [requestImageView setImageWithURL:[NSURL URLWithString:pictureURL]
+//                     placeholderImage:[UIImage imageNamed:@"second"]];
+    
+
     
     UILabel *qtylbl = (UILabel *)[cell viewWithTag:206];
     [qtylbl setText:[NSString stringWithFormat:@"%@", qty]];

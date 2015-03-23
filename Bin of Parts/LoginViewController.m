@@ -87,7 +87,7 @@
             NSHTTPURLResponse *response = nil;
             NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
             
-            NSLog(@"Response code: %d", [response statusCode]);
+            NSLog(@"Response code: %ld", (long)[response statusCode]);
             if ([response statusCode] >=200 && [response statusCode] <300)
             {
                 NSError *error2 = nil;
@@ -111,7 +111,7 @@
                 [self alertStatus:@"Email or Password is incorrect." :@"Login Failed!"];
             } else {
                 if (error) NSLog(@"Error: %@", error);
-                [self alertStatus:@"Email or Password is incorrect." :@"Login Failed!"];
+                [self alertStatus:@"Something unknown happened." :@"Login Failed!"];
             }
         }
     }

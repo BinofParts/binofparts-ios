@@ -85,7 +85,7 @@
         
         NSString *post =[[NSString alloc] initWithFormat:@"part_id=%@&qty=%@&event_id=17", part, qty];
         
-        NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/inventories?user_email=%@&user_token=%@", kBaseURL, email, token];
+        NSString *urlString = [NSString stringWithFormat:@"%@events/2015flor/inventories?user_email=%@&user_token=%@", kBaseURL, email, token];
         NSLog(@"PostData: %@",post);
         
         NSURL *url=[NSURL URLWithString:urlString];

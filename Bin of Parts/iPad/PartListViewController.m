@@ -7,7 +7,7 @@
 //
 
 #import "PartListViewController.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "PartViewController.h"
 #import "constants.h"
 
@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     
-    NSString *urlString = [NSString stringWithFormat:@"%@parts/%@", kBaseURL, [_category lowercaseString]];
+    NSString *urlString = [NSString stringWithFormat:@"%@parts/category/%@", kBaseURL, [_category lowercaseString]];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *partURL = [NSURL URLWithString:urlString];
     NSLog(@"%@",partURL);
@@ -65,6 +65,7 @@
 //    NSURL *url = [NSURL URLWithString:pictureURL];
 //    NSData *data = [NSData dataWithContentsOfURL:url];
 //    requestImageView.image = [UIImage imageWithData:data];
+    
     
     UIImageView *requestImageView = (UIImageView *)[cell viewWithTag:100];
     [requestImageView setImageWithURL:[NSURL URLWithString:pictureURL]

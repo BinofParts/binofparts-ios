@@ -7,7 +7,7 @@
 //
 
 #import "RequestsTableViewController.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 #import "AcceptRequestViewController.h"
 #import "PDKeychainBindings.h"
 #import "constants.h"
@@ -42,7 +42,7 @@
     NSString *email = [bindings objectForKey:@"email"];
     NSString *token = [bindings objectForKey:@"token"];
     
-    NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/requests?user_email=%@&user_token=%@", kBaseURL, email,token];
+    NSString *urlString = [NSString stringWithFormat:@"%@events/2015flor/requests?user_email=%@&user_token=%@", kBaseURL, email,token];
     
     NSURL *teamURL = [NSURL URLWithString:urlString];
     
@@ -87,7 +87,7 @@
     NSString *email = [bindings objectForKey:@"email"];
     NSString *token = [bindings objectForKey:@"token"];
 
-    NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/requests?user_email=%@&user_token=%@", kBaseURL, email,token];
+    NSString *urlString = [NSString stringWithFormat:@"%@events/2015flor/requests?user_email=%@&user_token=%@", kBaseURL, email,token];
     
     NSURL *teamURL = [NSURL URLWithString:urlString];
     

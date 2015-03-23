@@ -37,7 +37,7 @@
     
     NSString *post =[[NSString alloc] initWithFormat:@""];
     
-    NSString *urlString = [NSString stringWithFormat:@"%@events/2014flor/requests/%@/accept?user_email=%@&user_token=%@", kBaseURL, request_id,email, token];
+    NSString *urlString = [NSString stringWithFormat:@"%@events/2015flor/requests/%@/accept?user_email=%@&user_token=%@", kBaseURL, request_id,email, token];
     NSLog(@"PostData: %@",post);
     
     NSURL *url=[NSURL URLWithString:urlString];
